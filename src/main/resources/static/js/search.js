@@ -39,3 +39,5 @@ $(document).ready(function() {
     });
 });
 
+console.clear();
+console.log("Recordar que la consola fue limpiada, Aquí no nada pasó :)");

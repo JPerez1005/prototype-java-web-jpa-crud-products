@@ -16,10 +16,7 @@ public class ServiceProduct {
     @Autowired
     private RepositoryProduct rp;
     
-    public List<Product> listAll(String keyWord){
-        if(keyWord!=null){
-            return rp.findAll(keyWord);
-        }
+    public List<Product> listAll(){
         return rp.findAll();
     }
     

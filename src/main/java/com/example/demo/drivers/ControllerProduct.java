@@ -12,7 +12,6 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
 /**
@@ -26,10 +25,9 @@ public class ControllerProduct {
     private ServiceProduct sp;
     
     @GetMapping("/")
-    public String verPaginaDeInicio(Model m,@Param("keyWord") String keyWord){
-        List<Product> products=sp.listAll(keyWord);
+    public String verPaginaDeInicio(Model m){
+        List<Product> products=sp.listAll();
         m.addAttribute("products",products);
-        m.addAttribute("keyWord",keyWord);
         return "index";
     }
     
