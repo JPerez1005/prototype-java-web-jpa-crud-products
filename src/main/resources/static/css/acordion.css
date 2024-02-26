@@ -1,0 +1,89 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    font-family: 'Lato', sans-serif;
+}
+
+.container{
+    width: 80%;
+    margin: 0 auto;
+    margin-top: 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.container h2{
+    position: relative;
+    width: 23rem;
+    color: hotpink;
+    margin: 20px 0;
+}
+
+.container h2::after{
+    position: absolute;
+    content: '';
+    width: 67px;
+    height: 2px;
+    right: 5px;
+    background-color: hotpink;
+    bottom: 0;
+}
+
+.accordion{
+    width: 18%;
+    padding: 0 5px;
+    cursor: pointer;
+    display: flex;
+    margin: 10px 0;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    border-radius: 10px;
+    background-color: var(--blue);
+	background-image: linear-gradient(90deg, var(--blue) 0%, var(--lightblue) 74%);
+}
+
+.accordion i {
+    color: #6db5ff;
+    transition: all .5s ease;
+}
+.accordion .fa-minus{
+    display: none;
+}
+.active .fa-minus{
+    display: block;
+}
+.active .fa-plus{
+    display: none;
+}
+.accordion h5{
+    font-size: 20px;
+    margin: 0;
+    color: #001733;
+    padding-left: 5px;
+}
+.active i, .active h5 , .accordion:hover i , .accordion:hover h5{
+    color: white;
+}
+.panal{
+    padding: 0 0px;
+    border-left: 1px solid #6db5ff;
+    margin-left: 25px;
+    font-size: 14px;
+    text-align: justify;
+    overflow: hidden;
+    overflow-y: auto;
+    overflow-x: auto;
+    transition: all .5s ease-in;
+    max-height: 0px;
+    width: 80%;
+    margin-bottom: 40px;
+    display: flex;
+    justify-content: center;
+}

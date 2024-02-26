@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <title>New Product</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="icon" th:href="@{/img/icono.ico}">
+        <link rel="stylesheet" th:href="@{/css/ScrollBar.css}" />
+        <link rel="stylesheet" th:href="@{/css/general.css}" />
+        <link rel="stylesheet" th:href="@{/css/header.css}" />
+        <link rel="stylesheet" th:href="@{/css/form-add-product.css}" />
+        <link rel="stylesheet" th:href="@{/css/new_product.css}" />
+    </head>
+    <body>
+        <header>
+            <div class="nav_bar">
+                <a href="/" class="logo"></a>
+                <div class="navigation">
+                    <div class="nav_items">
+                        <i class="uil uil-times nav_close_btn"></i>
+                        <a href="/"><i class="uil uil-estate"></i> Home</a>
+                        <a href="#"><i class="uil uil-compass"></i> Add Product</a>
+                        <a href="#"><i class="uil uil-info-circle"></i> About</a>
+                        <a href="#"><i class="uil uil-document-left"></i> Blog</a>
+                        <a href="#"><i class="uil uil-envelope"></i> Contact</a>
+                    </div>
+                </div>
+                <i class="uil uil-apps nav_menu_btn"></i>
+            </div>
+        </header>
+        <div class="container right-panel-active">
+            <!-- Sign Up -->
+            <div class="container__form container--signup">
+                <form th:action="@{/}" th:object="${product}" method="POST" class="form container" id="form1">
+                        <h2 class="form__title">Add Product</h2>
+                            <input th:field="*{name}" type="text" placeholder="Product name" class="input" autocomplete="off" required />
+                            <input th:field="*{brand}" type="text" placeholder="Product brand" class="input" autocomplete="off" required />
+                            <input th:field="*{madeIn}" type="text" placeholder="Product made in" class="input" autocomplete="off" required />
+                            <input th:field="*{price}" type="number" placeholder="Product price" class="input" autocomplete="off" required />
+                        <button class="btn enter" >Enter</button>
+                </form>
+            </div>
+
+            <!-- Sign In -->
+            <div class="container__form container--signin">
+                    <form th:action="@{/}" th:object="${product}" method="POST" class="form container" id="form2">
+                        <h2 class="form__title">Edit Product</h2>
+                            <input th:field="*{id}" id="idInput" type="text" placeholder="Product Id" class="input" readonly="readonly"/>
+                            <input th:field="*{name}" type="text" placeholder="Product name" class="input" />
+                            <input th:field="*{brand}" type="text" placeholder="Product brand" class="input" />
+                            <input th:field="*{madeIn}" type="text" placeholder="Product made in" class="input"/>
+                            <input th:field="*{price}" type="number" placeholder="Product price" class="input"/>
+                        <button class="btn enter" >Enter</button>
+                    </form>
+            </div>
+
+            <!-- Overlay -->
+            <div class="container__overlay">
+                    <div class="overlay">
+                            <div class="overlay__panel overlay--left">
+                                    <button class="btn" id="signIn">Edit</button>
+                            </div>
+                            <div class="overlay__panel overlay--right">
+                                    <button class="btn" id="signUp">Register</button>
+                            </div>
+                    </div>
+            </div>
+        </div>
+        <script th:src="@{/js/form-add-product.js}"></script>
+        <script th:src="@{/js/navBar.js}"></script>
+    </body>
+</html>

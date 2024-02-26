@@ -1,0 +1,75 @@
+/* 
+    Created on : 20/02/2024, 9:48:30 a. m.
+    Author     : perez
+*/
+
+.button, .button2{
+  position: relative;
+  width: 30px;
+  height: 30px;
+  background-color: #fff;
+  display: flex;
+  align-items: center;
+  color: black;
+  flex-direction: column;
+  justify-content: center;
+  border: none;
+  padding: 8px;
+  gap: 8px;
+  border-radius: 8px;
+  cursor: pointer;
+  text-decoration: none;
+  z-index: 100;
+}
+
+.button2 {
+  width: 100px;
+}
+
+.button::before, .button2::before{
+  content: '';
+  position: absolute;
+  inset: 0;
+  left: -4px;
+  top: -1px;
+  margin: auto;
+  width: 38px;
+  height: 38px;
+  border-radius: 10px;
+  background: linear-gradient(-45deg, #00000075 0%, #00b3ff 100% );
+  background-image: linear-gradient(90deg, #8a8a8a75 0%, var(--lightblue) 74%);
+  z-index: -10;
+  pointer-events: none;
+  transition: all 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.button2::before{
+    width: 108px;
+}
+
+.button::after, button2::after {
+  content: "";
+  z-index: -1;
+  position: absolute;
+  inset: 0;
+  background-color: var(--blue);
+    background-image: linear-gradient(90deg, var(--blue) 0%, var(--lightblue) 74%);
+  transform: translate3d(0, 0, 0) scale(0.95);
+  filter: blur(20px);
+}
+
+.button:hover::after , .button2:hover::after{
+  filter: blur(30px);
+}
+
+.button:hover::before , .button2:hover::before{
+  transform: rotate(-180deg);
+}
+
+.button:active::before , .button2:active::before{
+  scale: 0.7;
+}
+
+.button>a{
+    text-decoration: none;
+}

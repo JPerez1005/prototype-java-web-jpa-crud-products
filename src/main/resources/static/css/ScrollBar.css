@@ -1,0 +1,23 @@
+/* 
+    Created on : 22/02/2024, 10:50:21 a. m.
+    Author     : perez
+*/
+
+/*================== SCROLL BAR ==================*/
+
+::-webkit-scrollbar{
+    width: 4px;
+    background: white;
+    border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb{
+    width: 100%;
+    background: black;
+    border-radius: 5px;
+    /* border-radius: 2em; */
+}
+
+::-webkit-scrollbar-thumb:hover{
+    background: var(--scroll-thumb-hover-color);
+}
