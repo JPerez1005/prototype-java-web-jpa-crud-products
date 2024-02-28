@@ -4,7 +4,7 @@
         <title>New Product</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="icon" href="@{/img/icono.ico}">
+        <link rel="icon" href="../../resources/static/img/icono.ico">
         <link rel="stylesheet" href="../../resources/static/css/header.css" />
         <link rel="stylesheet" href="../../resources/static/css/ScrollBar.css" />
         <link rel="stylesheet" href="../../resources/static/css/general.css" />
@@ -47,13 +47,13 @@
 
             <!-- Sign In -->
             <div class="container__form container--signin">
-                    <form th:action="@{/}" th:object="${product}" method="POST" class="form container" id="form2">
+                    <form class="form container" id="form2">
                         <h2 class="form__title">Edit Product</h2>
-                            <input th:field="*{id}" id="idInput" type="text" placeholder="Product Id" class="input" readonly="readonly"/>
-                            <input th:field="*{name}" type="text" placeholder="Product name" class="input" />
-                            <input th:field="*{brand}" type="text" placeholder="Product brand" class="input" />
-                            <input th:field="*{madeIn}" type="text" placeholder="Product made in" class="input"/>
-                            <input th:field="*{price}" type="number" placeholder="Product price" class="input"/>
+                            <input id="idInput" type="text" placeholder="Product name" class="input" readonly="readonly" />
+                            <input id="name2" type="text" placeholder="Product name" class="input" autocomplete="off" required />
+                            <input id="brand2" type="text" placeholder="Product brand" class="input" autocomplete="off" required />
+                            <input id="madeIn2" type="text" placeholder="Product made in" class="input" autocomplete="off" required />
+                            <input id="price2" type="number" placeholder="Product price" class="input" autocomplete="off" required />
                         <button class="btn enter" >Enter</button>
                     </form>
             </div>
