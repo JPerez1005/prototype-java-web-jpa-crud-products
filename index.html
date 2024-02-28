@@ -18,8 +18,6 @@
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
         <!-- UnIcons -->
         <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.8/css/line.css">
-        <!-- FontAwesome -->
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     </head>
     
     <body>
@@ -68,21 +66,7 @@
                         </tr>
                     </thead>
                     <tbody id="tableBody_users">
-                        <tr th:each="p:${products}">
-                            <th th:text="${p.id}"></th>
-                            <th th:text="${p.name}"></th>
-                            <th th:text="${p.brand}"></th>
-                            <th th:text="${p.madeIn}"></th>
-                            <th th:text="${p.price}"></th>
-                            <td class='actions'>
-                                <a th:href="@{'/edit/'+${p.id}}">
-                                    <button class="button"><i class="fa-solid fa-pen-to-square" style="color: #fff;"></i></button>
-                                </a>
-                                <a th:href="@{'/drop/'+${p.id}}">
-                                    <button class="button"><i class="fa-solid fa-trash-can" style="color: #fff;"></i></button>
-                                </a>
-                            </td>
-                        </tr>
+                        
                     </tbody>
                 </table>
             </div>
@@ -93,10 +77,6 @@
         <script src="src/main/resources/static/js/acordion.js"></script>
         <script src="src/main/resources/static/js/search.js"></script>
         <script src="src/main/resources/static/js/redirections.js"></script>
-        <!-- Clear Console
-        <script>
-            console.clear();
-            console.log("Recordar que la consola fue limpiada, Aquí nada pasó :)");
-        </script> -->
+        <script src="src/main/javascript/drivers/ControllerProduct.js" type="module"></script>
     </body>
 </html>
